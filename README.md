@@ -49,19 +49,15 @@ All four dashboards rely on data from the **Dynatrace VMware extension** (extens
 
 - **Extension on Dynatrace Hub:** [VMware (remote monitoring)](https://www.dynatrace.com/hub/detail/vmware-remote-monitoring/)
 - **Documentation:** [VMware remote monitoring extension](https://docs.dynatrace.com/docs/observe/infrastructure-observability/extensions/vmware-remote-monitoring)
-- **Related Hub entries:** [vCenter Server](https://www.dynatrace.com/hub/detail/vcenter-server) · [VMware vSAN](https://dynatrace.com/hub/detail/vmware-vsan)
+
 
 ### What you need
 
 - A Dynatrace environment with the Extensions Manager
 - An **ActiveGate** with the EEC performance profile set to *High* or *Dedicated*, with network access to vCenter
 - A **read-only vSphere user**. Administrator access isn't required.
-- Clocks on the vCenters and hosts synced to NTP. Time drift can cause missing metrics.
 - ESXi hosts managed by a vCenter don't need to be added individually.
 
-### Enable vCenter alarms and events (needed for the Overview, DRS and health-status views)
-
-Ingesting vCenter triggered alarms and custom attributes/tags requires manually enabling the REST interface in the ActiveGate's `custom.properties` file. See the extension documentation above for the exact settings. Without this, the **vCenter Triggered Alarms & Events** tile will be empty.
 
 ### Extra requirements for specific dashboards
 
@@ -86,6 +82,3 @@ If a tile is empty, check the extension configuration. The Overview dashboard li
 - The Overview dashboard contains links to the Infrastructure & Operations app and the extension config. These are relative to your own tenant.
 - The Hypervisor problem buckets are keyword-matched on the Davis problem title (`disk`, `cpu`, `memory`). Edit the keywords in the tile queries to suit your environment.
 
-## Contributing
-
-Issues and pull requests are welcome. Please sanitise hostnames, IPs and tenant details from any screenshots or exports you share.
